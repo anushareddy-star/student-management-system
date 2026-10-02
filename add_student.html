@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Student</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand"
+           href="{{ url_for('dashboard') }}">
+            Student Management System
+        </a>
+
+        <div>
+            <a href="{{ url_for('dashboard') }}"
+               class="btn btn-outline-light btn-sm">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('students') }}"
+               class="btn btn-outline-light btn-sm">
+                Students
+            </a>
+
+            <a href="{{ url_for('add_student') }}"
+               class="btn btn-success btn-sm">
+                Add Student
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+        <div class="card-body">
+
+            <h3 class="mb-4">Add Student</h3>
+
+            <form method="POST">
+
+                <div class="row">
+
+                    <!-- Name -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Name</label>
+
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               required>
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Email</label>
+
+                        <input type="email"
+                               name="email"
+                               class="form-control"
+                               required>
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Phone</label>
+
+                        <input type="text"
+                               name="phone"
+                               class="form-control"
+                               required>
+                    </div>
+
+
+                    <!-- Department -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Department</label>
+
+                        <select name="department"
+                                class="form-control"
+                                required>
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="IT">IT</option>
+                            <option value="DS">DS</option>
+                            <option value="AI">AI</option>
+                            <option value="EEE">EEE</option>
+
+                        </select>
+                    </div>
+
+
+                    <!-- Year -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Year</label>
+
+                        <select name="year"
+                                class="form-control"
+                                required>
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+
+                        </select>
+                    </div>
+
+
+                    <!-- Marks -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Marks</label>
+
+                        <input type="number"
+                               name="marks"
+                               class="form-control"
+                               min="0"
+                               max="100"
+                               required>
+                    </div>
+
+
+                    <!-- Attendance -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Attendance</label>
+
+                        <input type="number"
+                               name="attendance"
+                               class="form-control"
+                               min="0"
+                               max="100"
+                               required>
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="btn btn-success">
+                    Add Student
+                </button>
+
+                <a href="{{ url_for('students') }}"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
